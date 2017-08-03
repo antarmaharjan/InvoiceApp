@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Welcome to Invoice App</title>
+</head>
+<body>
+
+    <form th:action="@{/addproduct}" th:object="${newProduct}" method ="post">
+        <span>th:if="{#fields.hasErrors('id')}"th:errors ="*{id}">Id Error</span>
+        <p> Enter product Id<input type ="text" th:field ="*{id}"/></p>
+        <span>th:if="{#fields.hasErrors('price')}"th:errors ="*{id}">Price Error</span>
+        <p>Enter Product Price<input type ="number" th:field ="*{price}"/></p>
+        <span>th:if="{#fields.hasErrors('description')}"th:errors ="*{id}">Description Error</span>
+        <p>Enter Product Description<input type ="text" th:field ="*{description}"/></p>
+        <input type="submit" value="Add Product"/>
+    </form>
+
+
+</body>
+</html>
